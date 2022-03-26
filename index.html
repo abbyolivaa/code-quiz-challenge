@@ -8,7 +8,17 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-   <div class="title"><strong>Coding Quiz Challenge</strong> </div>
+    <div class="headers">
+        <header>
+            <div class="highscoreBtn"><button>View Highscores</button></div>
+            <div class="timer">
+                <div class="timeText">Time Left</div>
+                <div class="timeSec">60</div>
+            </div> 
+        </header>
+    </div>  
+   
+    <div class="title"><strong>Coding Quiz Challenge</strong> </div>
 
     <!-- Start Quiz Button -->
    <div class="startBtn">
@@ -30,6 +40,57 @@
 
         </div>
     </div>
+
+    <!-- Quiz Box -->
+    <div class="quizBox">
+        <section>
+            <div class="quesText">
+                <span>What does HTML stand for?</span>
+            </div>
+            <div class="optionList">
+                <div class="option">
+                    <span>1. Hyper Text Preprocessor</span>
+                    <span></span>
+                </div>
+                <div class="option">
+                    <span>2. Hyper Text Markup Language </span>
+                    <span></span>
+                </div>
+                <div class="option">
+                    <span>3. Hyper Text Multiple Languages</span>
+                    <span></span>
+                </div>
+                <div class="option">
+                    <span>4. Hyper Tool Multi Language</span>
+                    <span></span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+<!-- High Score Box-->
+    <div class="highscoreBox">
+        <div class="allDone"><strong>All done!</strong></div>
+        <p>Your final score is </p>
+        <div class="initialsBox">
+            <label>Enter your initials
+                <input type="text" name="initials" size="15" id="initials">
+            <button>Submit</button></div>
+        </div>
+    </div>
+
+    <!-- Previous Highscores Box-->
+    <div class="prevHighscoreBox">
+        High scores
+        <label class="localStorage">
+            <input type="">
+        </label>
+        <div class="buttons">
+            <button class="return">Go Back</button>
+            <button class="clear">Clear high scores</button>
+    </div> 
+
+    
    
     
 </body>

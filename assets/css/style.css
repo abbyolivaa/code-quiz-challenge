@@ -1,34 +1,199 @@
+body{
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+button:hover{
+    background: violet;
+}
+
+button{
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.headers .timer{
+    margin-top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 145px;
+    height: 45px;
+    background: transparent;
+    border: 1px solid violet;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+.headers .timer .timeText {
+    font-weight: 400;
+    user-select: none;
+}
+
+.headers .highscoreBtn{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 0px;
+}
+
+.headers .highscoreBtn button{
+    border: none;
+    padding: none;
+    background-color: transparent;
+    color: violet;
+}
+
+
 .startBtn,
-.infoBox{
+.infoBox,
+.quizBox,
+.prevHighscoreBox,
+.highscoreBox{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
 }
 .title{
     font-size:x-large;
     text-align: center;
-    margin-top: 150px;
+    margin-top: 200px;
 }
 
 .startBtn button {
     font-size: 15px;
-    color: white;
+    color: #fff;
     background-color: rgb(48, 1, 100);
     padding: 10px 20px;
     outline: none;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 10px;
 }
 
 .infoBox{
+    display: none;
     width: 540px;
-    background-color: white;
-    border-radius: 5px;
+    background: #fff;
+    border-radius: 10px;
+    text-align: center;
     
 }
 
-.infoTitle{
+.infoBox .infoTitle{
     text-align: center;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    padding: 0 35px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.infoBox .infoList {
+    padding:10px, 20px;
+}
+
+.infoBox .infoList .info span {
+    font-weight: 600;
+    color: rgb(48, 1, 100);
+}
+
+.quizBox{
+    width: 550px;
+    background: #fff;
+    border-radius: 10px;
+    border-color: violet;
+    display: none;
+}
+
+.quizBox header {
+    position: relative;
+    z-index: 99;
+    height: 70px;
+    padding: 0 35px;
+}
+
+.quizBox .section {
+    padding: 25px 30px 20px 30px;
+    background: #fff;
+}
+
+.quizBox section .quesText{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.quizBox section .optionList {
+    padding: 20px 0;
+    display: block;
+}
+
+.quizBox section .optionList .option{
+    background: rgb(48, 1, 100);
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 17px;
+    border-radius: 10px ;
+    padding: 15px 15px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+
+section .optionList .option:hover {
+    color: #fff;
+    background: violet;
+}
+
+.highscoreBox {
+    background:#fff ;
+    width: 500px;
+    padding: 25px 30px;
+    border-radius: 5px;
+    background: #fff;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+}
+
+.highscoreBox .allDone {
+    font-size: 20px;
+}
+
+.highscoreBox button {
+    background: rgb(48, 1, 100);
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+}
+
+.prevHighscoreBox{
+    height: 100px;
+    width: 700px;
+    padding: 25px 30px;
+    background:#fff ;
+    display: flex;
+    text-align:center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.prevHighscoreBox button {
+    background: rgb(48, 1, 100);
+    color: #fff;
+    border-radius: 10px;
+    padding: 5px 10px;
+    outline: none;
+    border: none;
 }
