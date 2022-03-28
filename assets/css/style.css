@@ -69,41 +69,12 @@ button{
     border-radius: 10px;
 }
 
-.infoBox{
-    display: none;
-    width: 540px;
-    background: #fff;
-    border-radius: 10px;
-    text-align: center;
-    
-}
-
-.infoBox .infoTitle{
-    text-align: center;
-    align-items: center;
-    height: 60px;
-    width: 100%;
-    display: flex;
-    padding: 0 35px;
-    font-size: 20px;
-    font-weight: 600;
-}
-
-.infoBox .infoList {
-    padding:10px, 20px;
-}
-
-.infoBox .infoList .info span {
-    font-weight: 600;
-    color: rgb(48, 1, 100);
-}
 
 .quizBox{
     width: 550px;
     background: #fff;
     border-radius: 10px;
     border-color: violet;
-    display: none;
 }
 
 .quizBox header {
@@ -196,4 +167,8 @@ section .optionList .option:hover {
     padding: 5px 10px;
     outline: none;
     border: none;
+}
+
+.hide {
+    display: none;
 }

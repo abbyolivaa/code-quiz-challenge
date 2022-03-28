@@ -11,64 +11,53 @@
     <div class="headers">
         <header>
             <div class="highscoreBtn"><button>View Highscores</button></div>
-            <div class="timer">
-                <div class="timeText">Time Left</div>
-                <div class="timeSec">60</div>
+            <div class="timer" id="timer">
+                <div class="timeText" id="timeLeft">Time Left</div>
+                <div class="timeSec" id="timeSec"></div>
             </div> 
         </header>
     </div>  
    
-    <div class="title"><strong>Coding Quiz Challenge</strong> </div>
 
     <!-- Start Quiz Button -->
-   <div class="startBtn">
-       <button>Start Quiz</button>
-   </div>
-
-    <!-- Info Box -->
-    
-    <div class="infoBox">
-        <div class="infoTitle">
-            <span> Instructions </span>
+    <div class="startPage" id="startPage">
+        <div class="title"><strong>Coding Quiz Challenge</strong> </div>
+        <div class="startBtn" id="startBtn">
+            <button>Start Quiz</button>
         </div>
-        <div class="infoList">
-            <div class="info">1. You will have only <span>60 seconds</span> for the quiz.</div>
-            <div class="info">2. Once you click a choice, your answer will be submitted.</div>
-            <div class="info">3. If you answer incorrectly, the  timer will be deducted by 10 seconds.</div>
-            <div class="info">6. Once all questions are answered, or the timer hits 0, the quiz is over.</div>
-            <div class="info">7. At the end you will see your highscore</div>
-
-        </div>
-    </div>
+    </div>    
 
     <!-- Quiz Box -->
-    <div class="quizBox">
+    <div class="quizBox" id="quizBox">
         <section>
-            <div class="quesText">
-                <span>What does HTML stand for?</span>
+            <div class="quesText" id="ques">
+                <span>Question 1</span>
             </div>
-            <div class="optionList">
-                <div class="option">
-                    <span>1. Hyper Text Preprocessor</span>
+            <div class="optionList" id="answers">
+                <div class="option" id="choice">
+                    <span>Answer 1</span>
                     <span></span>
                 </div>
-                <div class="option">
-                    <span>2. Hyper Text Markup Language </span>
+                <div class="option" id="choice">
+                    <span>Answer 2</span>
                     <span></span>
                 </div>
-                <div class="option">
-                    <span>3. Hyper Text Multiple Languages</span>
+                <div class="option" id="choice">
+                    <span>Answer 3</span>
                     <span></span>
                 </div>
-                <div class="option">
-                    <span>4. Hyper Tool Multi Language</span>
+                <div class="option" id="choice">
+                    <span>Answer 4</span>
                     <span></span>
                 </div>
+            </div>
+            <div class="nextBtn" id="nextBtn">
+                <button>Next</button>
             </div>
         </section>
     </div>
 
-<!-- High Score Box-->
+<!-- High Score Box 
     <div class="highscoreBox">
         <div class="allDone"><strong>All done!</strong></div>
         <p>Your final score is </p>
@@ -79,7 +68,7 @@
         </div>
     </div>
 
-    <!-- Previous Highscores Box-->
+    <!-- Previous Highscores Box 
     <div class="prevHighscoreBox">
         High scores
         <label class="localStorage">
@@ -88,7 +77,7 @@
         <div class="buttons">
             <button class="return">Go Back</button>
             <button class="clear">Clear high scores</button>
-    </div> 
+    </div> -->
 
     
    
