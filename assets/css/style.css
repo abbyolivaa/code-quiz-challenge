@@ -59,7 +59,7 @@ button{
     margin-top: 200px;
 }
 
-.startBtn button {
+.startBtn  button, .nextBtn button{
     font-size: 15px;
     color: #fff;
     background-color: rgb(48, 1, 100);
@@ -68,6 +68,7 @@ button{
     border: none;
     border-radius: 10px;
 }
+
 
 
 .quizBox{
@@ -84,22 +85,22 @@ button{
     padding: 0 35px;
 }
 
-.quizBox .section {
+.quizBox {
     padding: 25px 30px 20px 30px;
     background: #fff;
 }
 
-.quizBox section .quesText{
+.quizBox .quesText{
     font-size: 20px;
     font-weight: 600;
 }
 
-.quizBox section .optionList {
+.quizBox .answerButtons {
     padding: 20px 0;
     display: block;
 }
 
-.quizBox section .optionList .option{
+.quizBox .answerButtons button{
     background: rgb(48, 1, 100);
     border: 1px solid #fff;
     color: #fff;
@@ -112,10 +113,9 @@ button{
     justify-content: space-between;
     cursor: pointer;
     transition: all 0.3s ease;
-
 }
 
-section .optionList .option:hover {
+.answerButtons .choice:hover {
     color: #fff;
     background: violet;
 }
