@@ -10,11 +10,14 @@
 <body>
     <div class="headers">
         <header>
-            <div class="highscoreBtn"><button>View Highscores</button></div>
-            <div class="timer" id="timer">
-                <div class="timeText" id="timeLeft">Time Left</div>
-                <div class="timeSec" id="timeSec"></div>
-            </div> 
+            <section class="timerLocation" id="timerLocation">
+                <div class="timer" id="timer">
+                    <div class="timeText" id="timeLeft">Time Left</div>
+                    <div class="timeSec" id="timeSec"></div>
+                </div> 
+            </section>
+           <div class="highscoreBtn"><button>View Highscores</button></div>
+            
         </header>
     </div>  
    
@@ -22,6 +25,13 @@
     <!-- Start Quiz Button -->
     <div class="startPage" id="startPage">
         <div class="title"><strong>Coding Quiz Challenge</strong> </div>
+        <p class="instructions">There will be a 60 second time limit for this quiz.
+            Keep in mind that every wrong answer will deduct the timer by 10 seconds.
+            You can move on to the next question at any time.
+            The answers chosen correctly will add to your high score, displayed at the end of the quiz.
+            <strong>Good luck!</strong>
+        </p>
+        <br>
         <div class="startBtn" id="startBtn">
             <button>Start Quiz</button>
         </div>
@@ -37,24 +47,31 @@
                 <button class="choice" id="choice">Answer 4</button> <br>
            </div>
            <div class="nextBtn" id="nextBtn">
-               <button>Next</button><br>
+               <button>Next</button>
            </div>
-        </div>               
+           <br>
+           <div class="correct-or-wrong" id="correct-or-wrong">...</div>
+           
+        </div>  
     </div>
 
-<!-- High Score Box -->
+    <!-- High Score Box -->
     <div class="highscoreBox" id="highscoreBox">
-        <div class="allDone"><strong>All done!</strong></div>
-        <p>Your final score is </p>
-        <div class="initialsBox">
-            <label>Enter your initials
-                <input type="text" name="initials" size="15" id="initials">
-            <button>Submit</button></div>
+        <div class="allDone"><strong>All done!</strong>
+            <div class="finalScore" id="finalScore">...</div>
+        </div>
+        
+        <div class="initialsBox" id="initialsBox">
+            <label class = "form-label" for="initials">Enter Your Initials</label>
+            <input type="text" name="initials" size="15" id="initials">
+            <button type="submit" class="submit" id="submitBtn">Submit</button>
+            <br>
+            <div class="alertText" id="alertText"></div>
         </div>
     </div>
 
-    <!-- Previous Highscores Box 
-    <div class="prevHighscoreBox">
+    <!-- Previous Highscores Box -->
+    <div class="prevHighscoreBox" id = "highscoreLog">
         High scores
         <label class="localStorage">
             <input type="">
@@ -62,7 +79,7 @@
         <div class="buttons">
             <button class="return">Go Back</button>
             <button class="clear">Clear high scores</button>
-    </div> -->
+    </div> 
 
     
    

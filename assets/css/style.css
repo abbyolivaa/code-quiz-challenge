@@ -1,26 +1,22 @@
+
 body{
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
-
-button:hover{
-    background: violet;
+.timerLocation{
+    display: flex;
+    justify-content: flex-end;
 }
-
-button{
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
 .headers .timer{
     margin-top: 0px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 145px;
-    height: 45px;
+    height: 40px;
     background: transparent;
-    border: 1px solid violet;
-    border-radius: 5px;
+    border: 3px solid violet;
+    background-color: rgb(255, 208, 255);
+    border-radius: 10px;
     padding: 0 10px;
 }
 
@@ -32,7 +28,7 @@ button{
 .headers .highscoreBtn{
     display: flex;
     justify-content: flex-start;
-    margin-top: 0px;
+    margin-top: -30px;
 }
 
 .headers .highscoreBtn button{
@@ -40,11 +36,10 @@ button{
     padding: none;
     background-color: transparent;
     color: violet;
+    font-size: medium;
 }
 
-
 .startBtn,
-.infoBox,
 .quizBox,
 .prevHighscoreBox,
 .highscoreBox{
@@ -53,6 +48,16 @@ button{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.startPage p {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: small;
+    text-align: center;
+}
+
 .title{
     font-size:x-large;
     text-align: center;
@@ -68,8 +73,6 @@ button{
     border: none;
     border-radius: 10px;
 }
-
-
 
 .quizBox{
     width: 550px;
@@ -120,6 +123,13 @@ button{
     background: violet;
 }
 
+.quizBox .correct-or-wrong,
+.alertText{
+    font-size: x-large;
+    color: darkgray;
+    font-style: italic;
+}
+
 .highscoreBox {
     background:#fff ;
     width: 500px;
@@ -131,12 +141,14 @@ button{
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
-
-
 }
 
 .highscoreBox .allDone {
     font-size: 20px;
+}
+
+.nextBtn button:hover{
+    background: violet;
 }
 
 .highscoreBox button {
@@ -168,6 +180,16 @@ button{
     outline: none;
     border: none;
 }
+
+button:hover{
+    background: violet;
+}
+
+button{
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
 
 .hide {
     display: none;

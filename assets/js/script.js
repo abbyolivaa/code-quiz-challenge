@@ -1,15 +1,21 @@
+
 var startBtn = document.getElementById('startBtn');
 var startPage = document.getElementById('startPage');
 var quizBox = document.getElementById('quizBox');
 var nextBtn = document.getElementById('nextBtn');
-var questionEl = document.getElementById('question')
-var answerButtonsEl = document.getElementById('answerButtons')
-var choiceBtn = document.getElementById('choice')
-var timerEl = document.getElementById('timer')
-var highScorePage = document.getElementById ('highscoreBox')
+var questionEl = document.getElementById('question');
+var answerButtonsEl = document.getElementById('answerButtons');
+var choiceBtn = document.getElementById('choice');
+var timerEl = document.getElementById('timer');
+var highScorePage = document.getElementById ('highscoreBox');
+var rightOrWrong = document.getElementById ('correct-or-wrong');
+var highScoreLog = document.getElementById ('highscoreLog')
+var submitBtn = document.getElementById('submitBtn');
+var finalScore = document.querySelector('#finalScore') 
 
+
+highScoreLog.classList.add('hide');
 highScorePage.classList.add('hide');
-
 quizBox.classList.add('hide');
 
 let shuffledQues, currentQuesIndex
@@ -17,15 +23,38 @@ let shuffledQues, currentQuesIndex
 startBtn.addEventListener('click', startQuiz);
 
 nextBtn.addEventListener('click', () => {
+    rightOrWrong.textContent = "";
     currentQuesIndex++
     setNextQuestion();
 });
 
+var timeLeft = 59
+function timer() {
+    timeLeft;
+        var timeInterval = setInterval(function() {
+            if (timeLeft > 0) {
+                timerEl.textContent = "Time left: " + timeLeft;
+                timeLeft--;
+            } else if (timeLeft <= 0) {
+                timerEl.textContent = "Time's up!"
+                quizBox.classList.add ('hide');
+                highScorePage.classList.remove('hide');
+            }else {
+                timerEl.textContent = '';
+                clearInterval(timeInterval);
+                displayMessage ();
+            }
+
+        }, 1000);
+};
+
+var score;
 function startQuiz() {
     console.log ('started');
     startPage.classList.add ('hide');
     shuffledQues = questions.sort(() => Math.random() - .5);
     currentQuesIndex = 0;
+    score = 0
     quizBox.classList.remove('hide');
     timer();
     setNextQuestion();
@@ -40,17 +69,24 @@ function setNextQuestion(){
 }
 
 function showQuestion(question){
-    questionEl.innerText = question.question
-    question.answers.forEach(answer => {
-        var button = document.createElement('button');
-        button.innerText = answer.text
-        button.classList.add('choice')
-        if(answer.correct) {
-            button.dataset.correct = answer.correct
-        };
-        button.addEventListener ('click', selectAnswer);
-        answerButtonsEl.appendChild(button);
-    });
+    if (currentQuesIndex < 5) {
+        questionEl.innerText = question.question
+        question.answers.forEach(answer => {
+            var button = document.createElement('button');
+            button.innerText = answer.text
+            button.classList.add('choice')
+            if(answer.correct) {
+                button.dataset.correct = answer.correct
+            };
+            button.addEventListener ('click', selectAnswer);
+            answerButtonsEl.appendChild(button);
+        }); 
+    } else{
+        quizBox.classList.add ('hide');
+        highScorePage.classList.remove('hide');
+
+    }
+    
 }
 
 function resetState(){
@@ -59,41 +95,42 @@ function resetState(){
     }
 }
 
+
 function selectAnswer(e){
     var selectedButton = e.target
-    var correct = selectedButton.dataset.correct
-    var highScore = 0
+    var correct = selectedButton.dataset.correct 
     if (answer = correct) {
-        highScore++
-        console.log(highScore);
+        rightOrWrong.textContent = "Correct!"
+        score++
+        console.log(score);
     }
     else{
-        timeLeft -=10;
+        rightOrWrong.textContent = "Try Again!"
+        timeLeft -=5;
     }
-    
+    finalScore.textContent = 'Your final score is ' + score
+    var highScore = localStorage.getItem("highscore");
+
+    if (highScore === null) {
+        highScore = 0;
+    }
+
+    localStorage.setItem("highscore", score);
 }
-var timeLeft = 60
 
-function timer() {
-    timeLeft;
-        var timeInterval = setInterval(function() {
-            if (timeLeft > 0) {
-                timerEl.textContent = "Time left: " + timeLeft;
-                timeLeft--;
-            } else if (timeLeft <= 0) {
-                timerEl.textContent = "Time's up!"
-            }else {
-                timerEl.textContent = '';
-                clearInterval(timeInterval);
-                displayMessage ();
-            }
-
-        }, 1000);
+var submitInitials = function() {
+    var initials = document.querySelector("#initials");
+    initials= "";
+    console.log(initials);
+    return initials ; 
 };
 
-function showHighScores (){
-    highScorePage.classList.remove('hide')
-}
+submitBtn.addEventListener('click', () => {
+    var initials = document.querySelector("#initials");
+    console.log(initials.value);
+    localStorage.setItem("initials", initials.value);
+    highScorePage.classList.add('hide');
+})
 
 
 //function inputInitial () {}
