@@ -48,7 +48,7 @@ function timer() {
                 timerEl.textContent = "Time's up!"
                 quizBox.classList.add ('hide');
                 highScorePage.classList.remove('hide');
-                highscoreLog.classList.add ('hide');
+                highscoreLogPage.classList.add ('hide');
             }else {
                 timerEl.textContent = '';
                 clearInterval(timeInterval);
@@ -125,27 +125,21 @@ function selectAnswer(e){
         highScore = 0;
     }
 
-    localStorage.setItem("highscore", score);
+    localStorage.setItem('highscore', JSON.stringify(score));
     return highScore;
 }
 
 submitBtn.addEventListener('click', () => {
     var initials = document.querySelector("#initials");
     console.log(initials.value);
-    var initialsValue = initials.value
-    localStorage.setItem("initials", initialsValue);
+    localStorage.setItem('initials', JSON.stringify(initials.value));
     highScorePage.classList.add('hide');
     highscoreLogPage.classList.remove ('hide');
 })
 
-var arrayOfKeys = Object.keys(localStorage);
 
-var arrayOfValues = [score];
-for(var i in localStorage){
-    if(localStorage.hasOwnProperty(i)){
-        arrayOfValues.push(localStorage[i]);
-    }
-}
+localStorage.setItem('highscore', JSON.stringify(score));
+
 
 var playerScore = [localStorage.getItem("initials"),localStorage.getItem("highscore")]
 var highscoreLog = document.querySelector("#prevHighscores")
