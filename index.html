@@ -16,7 +16,7 @@
                     <div class="timeSec" id="timeSec"></div>
                 </div> 
             </section>
-           <div class="highscoreBtn"><button>View Highscores</button></div>
+           <div class="highscoreBtn" id="highscoreBtn"><button>View Highscores</button></div>
             
         </header>
     </div>  
@@ -72,13 +72,15 @@
 
     <!-- Previous Highscores Box -->
     <div class="prevHighscoreBox" id = "highscoreLog">
-        High scores
-        <label class="localStorage">
-            <input type="">
-        </label>
+        <p><strong>High scores</strong></p>
+        <br>
+        <div class="prevHighscores" id="prevHighscores">
+            ...
+        </div>
+        <br>
         <div class="buttons">
-            <button class="return">Go Back</button>
-            <button class="clear">Clear high scores</button>
+            <button class="return" id="return">Go Back</button>
+            <button class="clear" id="clear">Clear high scores</button>
     </div> 
 
     
